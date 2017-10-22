@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
 import clasesPrincipales.SuperClaseHiperMegaPro;
-
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -16,6 +15,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Principal {
     public static void main(String args[]) {
 
+
+        String cosas = "a = ab d+ ddc";
+        String cosa1 = cosas.substring(0,(cosas.indexOf("=")));
+        String cosa2 = cosas.substring((cosas.indexOf("=")+1), cosas.length());
+        System.out.println("cosas"+ cosas);
+        System.out.println("cosas1"+ cosa1);
+        System.out.println("cosas1"+ cosa2);
+
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("./src"));
         chooser.setDialogTitle("Seleccione su archivo");
@@ -26,6 +33,8 @@ public class Principal {
            ruta = chooser.getSelectedFile().getAbsolutePath();
         }
         AnalizadorSintactico analizadorSintactico = new AnalizadorSintactico();
+
+
 // lee el archivo
         Scanner s = null;
         ArrayList<String> arreglo = new ArrayList<>();
